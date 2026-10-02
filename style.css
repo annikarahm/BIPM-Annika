@@ -1,37 +1,40 @@
 /* =========================================
-   1. COLOR PALETTE
+   COLOR PALETTE
    ========================================= */
 
 :root {
-    --rose: #c98f9d;
-    --rose-dark: #a96f7d;
-    --rose-light: #efdde2;
 
-    --sage: #9eae96;
+    --rose: #c3919e;
+    --rose-dark: #a66f7d;
+    --rose-light: #f0e1e5;
+
+    --sage: #9aaa91;
     --sage-dark: #66745f;
     --sage-light: #e5ebe1;
 
-    --cream: #faf7f2;
+    --cream: #faf8f4;
     --white: #ffffff;
 
-    --text: #2f332e;
+    --text: #30332f;
     --text-light: #6d746b;
 
-    --border: #e8ddd8;
+    --border: #e9dfda;
 }
 
 
 /* =========================================
-   2. GENERAL SETTINGS
+   GENERAL SETTINGS
    ========================================= */
 
 * {
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     margin: 0;
@@ -46,18 +49,20 @@ body {
 
 
 /* =========================================
-   3. NAVIGATION
+   NAVIGATION
    ========================================= */
 
 nav {
+
     position: sticky;
     top: 0;
 
     display: flex;
-    justify-content: space-between;
+
+    justify-content: flex-end;
     align-items: center;
 
-    padding: 18px 8%;
+    padding: 18px 6%;
 
     background-color: var(--rose);
 
@@ -65,31 +70,18 @@ nav {
 }
 
 
-/* Your name on the left */
-
-.nav-name {
-    font-size: 20px;
-    font-weight: 700;
-
-    color: var(--white);
-
-    letter-spacing: 1px;
-}
-
-
-/* Container for navigation links */
-
 .nav-links {
+
     display: flex;
+
     align-items: center;
 
-    gap: 30px;
+    gap: 35px;
 }
 
 
-/* Individual links */
-
 .nav-links a {
+
     color: var(--white);
 
     text-decoration: none;
@@ -97,25 +89,30 @@ nav {
     font-size: 14px;
     font-weight: 500;
 
-    transition: 0.3s;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 
-/* What happens when the mouse is over a link */
-
 .nav-links a:hover {
+
     color: var(--sage-dark);
+
+    transform: translateY(-2px);
 }
 
 
 /* =========================================
-   4. HERO / INTRO AREA
+   INTRODUCTION
    ========================================= */
 
 header {
-    min-height: 75vh;
+
+    min-height: 35vh;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
@@ -123,182 +120,163 @@ header {
 
     text-align: center;
 
-    padding: 80px 20px;
+    padding: 50px 20px;
 
     background-color: var(--rose-light);
 }
 
 
-/* "Nice to meet you." */
-
-.hello {
-    margin: 0 0 10px 0;
-
-    font-size: 18px;
-    font-weight: 500;
-
-    color: var(--sage-dark);
-
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-
-/* "Hi, I'm Annika." */
+/* Hi, I'm Annika */
 
 header h1 {
+
     margin: 0;
 
-    font-size: 64px;
+    font-size: 52px;
+
     font-weight: 700;
 
-    color: var(--text);
+    letter-spacing: -1.5px;
 
-    letter-spacing: -2px;
+    color: var(--text);
 }
 
 
-/* Intro text */
+/* Nice to meet you */
 
-.intro {
-    max-width: 650px;
+.hello {
 
-    margin-top: 25px;
+    margin: 12px 0 0;
 
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 15px;
 
-    color: var(--text-light);
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: var(--sage-dark);
 }
 
 
 /* =========================================
-   5. MAIN PAGE AREA
+   MAIN CONTENT
    ========================================= */
 
 main {
+
     width: 88%;
+
     max-width: 1100px;
 
     margin: 0 auto;
 
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding: 75px 0;
 }
 
 
 /* =========================================
-   6. GENERAL SECTIONS
+   SECTIONS
    ========================================= */
 
 section {
-    margin-bottom: 80px;
 
-    padding: 55px;
+    margin-bottom: 65px;
+
+    padding: 50px;
 
     background-color: var(--white);
 
-    border-radius: 24px;
-
     border: 1px solid var(--border);
 
-    box-shadow: 0 10px 30px rgba(70, 60, 55, 0.06);
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(70, 60, 55, 0.06);
 }
 
 
-/* Section titles */
-
 section h2 {
-    margin-top: 0;
-    margin-bottom: 25px;
 
-    font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 30px;
+
     font-weight: 600;
 
     color: var(--sage-dark);
 }
 
 
-/* Normal text inside sections */
-
-section p {
-    font-size: 16px;
-
-    color: var(--text-light);
-}
-
-
 /* =========================================
-   7. ABOUT ME
+   SECTION COLORS
    ========================================= */
 
 #about {
-    border-top: 6px solid var(--rose);
+    border-top: 5px solid var(--rose);
 }
 
-
-/* =========================================
-   8. JOURNEY
-   ========================================= */
 
 #journey {
-    border-top: 6px solid var(--sage);
+    border-top: 5px solid var(--sage);
 }
 
-
-/* =========================================
-   9. MAP
-   ========================================= */
 
 #map {
-    border-top: 6px solid var(--rose);
+    border-top: 5px solid var(--rose);
 }
 
 
 /* =========================================
-   10. FUTURE PHOTO CARDS
+   FUTURE PHOTO CARDS
    ========================================= */
 
-/*
-   We are not using these yet,
-   but later these will be your clickable photos.
-*/
-
 .photo-grid {
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 25px;
 
-    margin-top: 40px;
+    margin-top: 35px;
 }
 
 
 .photo-card {
-    position: relative;
 
     min-height: 300px;
+
+    background-color: var(--sage-light);
 
     border-radius: 20px;
 
     overflow: hidden;
 
-    background-color: var(--sage-light);
-
     cursor: pointer;
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
 .photo-card:hover {
+
     transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 30px rgba(70, 60, 55, 0.12);
 }
 
 
 .photo-card img {
+
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -306,13 +284,15 @@ section p {
 
 
 /* =========================================
-   11. BUTTONS
+   BUTTONS
    ========================================= */
 
 button {
+
     padding: 12px 24px;
 
     border: none;
+
     border-radius: 30px;
 
     background-color: var(--rose);
@@ -320,16 +300,21 @@ button {
     color: var(--white);
 
     font-family: "Montserrat", sans-serif;
+
     font-size: 14px;
+
     font-weight: 600;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
 
 button:hover {
+
     background-color: var(--rose-dark);
 
     transform: translateY(-2px);
@@ -337,110 +322,77 @@ button:hover {
 
 
 /* =========================================
-   12. LINKS INSIDE THE PAGE
-   ========================================= */
-
-main a {
-    color: var(--rose-dark);
-
-    font-weight: 600;
-
-    text-decoration: none;
-}
-
-
-main a:hover {
-    color: var(--sage-dark);
-}
-
-
-/* =========================================
-   13. FOOTER
-   ========================================= */
-
-footer {
-    padding: 40px 20px;
-
-    text-align: center;
-
-    background-color: var(--sage-dark);
-
-    color: var(--white);
-
-    font-size: 14px;
-}
-
-
-/* =========================================
-   14. MOBILE VERSION
+   MOBILE VERSION
    ========================================= */
 
 @media (max-width: 768px) {
 
     nav {
-        padding: 16px 5%;
-    }
 
+        justify-content: center;
 
-    .nav-name {
-        font-size: 17px;
+        padding: 15px 4%;
     }
 
 
     .nav-links {
-        gap: 14px;
+
+        gap: 18px;
     }
 
 
     .nav-links a {
+
         font-size: 12px;
     }
 
 
     header {
-        min-height: 65vh;
 
-        padding: 60px 20px;
-    }
+        min-height: 30vh;
 
-
-    .hello {
-        font-size: 14px;
+        padding: 40px 20px;
     }
 
 
     header h1 {
-        font-size: 42px;
 
-        letter-spacing: -1px;
+        font-size: 38px;
     }
 
 
-    .intro {
-        font-size: 16px;
+    .hello {
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
     }
 
 
     main {
+
         width: 92%;
 
-        padding-top: 60px;
+        padding: 50px 0;
     }
 
 
     section {
-        padding: 35px 25px;
 
-        margin-bottom: 50px;
+        padding: 30px 25px;
+
+        margin-bottom: 40px;
     }
 
 
     section h2 {
-        font-size: 27px;
+
+        font-size: 25px;
     }
 
 
     .photo-grid {
+
         grid-template-columns: 1fr;
     }
 
