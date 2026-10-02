@@ -1,21 +1,29 @@
-/* =========================
-   1. Grundfarben
-   ========================= */
+/* =========================================
+   1. COLOR PALETTE
+   ========================================= */
 
 :root {
-    --background: #f7f7f5;
-    --surface: #ffffff;
-    --text: #1f2933;
-    --text-light: #667085;
-    --accent: #4f6f8f;
-    --accent-dark: #334e68;
-    --border: #e5e7eb;
+    --rose: #c98f9d;
+    --rose-dark: #a96f7d;
+    --rose-light: #efdde2;
+
+    --sage: #9eae96;
+    --sage-dark: #66745f;
+    --sage-light: #e5ebe1;
+
+    --cream: #faf7f2;
+    --white: #ffffff;
+
+    --text: #2f332e;
+    --text-light: #6d746b;
+
+    --border: #e8ddd8;
 }
 
 
-/* =========================
-   2. Allgemeine Einstellungen
-   ========================= */
+/* =========================================
+   2. GENERAL SETTINGS
+   ========================================= */
 
 * {
     box-sizing: border-box;
@@ -30,69 +38,113 @@ body {
 
     font-family: "Montserrat", sans-serif;
 
-    background-color: var(--background);
+    background-color: var(--cream);
     color: var(--text);
 
     line-height: 1.6;
 }
 
 
-/* =========================
-   3. Navigation
-   ========================= */
+/* =========================================
+   3. NAVIGATION
+   ========================================= */
 
 nav {
     position: sticky;
     top: 0;
 
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
 
-    padding: 20px;
+    padding: 18px 8%;
 
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--rose);
 
-    border-bottom: 1px solid var(--border);
-
-    z-index: 100;
+    z-index: 1000;
 }
 
 
-nav a {
-    color: var(--text);
+/* Your name on the left */
+
+.nav-name {
+    font-size: 20px;
+    font-weight: 700;
+
+    color: var(--white);
+
+    letter-spacing: 1px;
+}
+
+
+/* Container for navigation links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* Individual links */
+
+.nav-links a {
+    color: var(--white);
 
     text-decoration: none;
 
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
 
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
 
-nav a:hover {
-    color: var(--accent);
+/* What happens when the mouse is over a link */
+
+.nav-links a:hover {
+    color: var(--sage-dark);
 }
 
 
-/* =========================
-   4. Startbereich / Header
-   ========================= */
+/* =========================================
+   4. HERO / INTRO AREA
+   ========================================= */
 
 header {
-    min-height: 70vh;
+    min-height: 75vh;
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
     text-align: center;
 
     padding: 80px 20px;
+
+    background-color: var(--rose-light);
 }
 
+
+/* "Nice to meet you." */
+
+.hello {
+    margin: 0 0 10px 0;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: var(--sage-dark);
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+
+/* "Hi, I'm Annika." */
 
 header h1 {
     margin: 0;
@@ -100,151 +152,296 @@ header h1 {
     font-size: 64px;
     font-weight: 700;
 
+    color: var(--text);
+
     letter-spacing: -2px;
 }
 
 
-header p {
-    margin-top: 20px;
+/* Intro text */
 
-    font-size: 20px;
+.intro {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    font-size: 18px;
     font-weight: 400;
 
     color: var(--text-light);
 }
 
 
-/* =========================
-   5. Hauptinhalt
-   ========================= */
+/* =========================================
+   5. MAIN PAGE AREA
+   ========================================= */
 
 main {
-    width: 90%;
+    width: 88%;
     max-width: 1100px;
 
     margin: 0 auto;
+
+    padding-top: 90px;
+    padding-bottom: 90px;
 }
 
 
-/* =========================
-   6. Einzelne Bereiche
-   ========================= */
+/* =========================================
+   6. GENERAL SECTIONS
+   ========================================= */
 
 section {
     margin-bottom: 80px;
-    padding: 60px;
 
-    background-color: var(--surface);
+    padding: 55px;
 
-    border-radius: 18px;
+    background-color: var(--white);
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 10px 30px rgba(70, 60, 55, 0.06);
 }
 
+
+/* Section titles */
 
 section h2 {
     margin-top: 0;
     margin-bottom: 25px;
 
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 600;
 
-    color: var(--accent-dark);
+    color: var(--sage-dark);
 }
 
 
+/* Normal text inside sections */
+
 section p {
     font-size: 16px;
+
     color: var(--text-light);
 }
 
 
-/* =========================
-   7. About-Me-Bereich
-   ========================= */
+/* =========================================
+   7. ABOUT ME
+   ========================================= */
 
 #about {
-    text-align: left;
+    border-top: 6px solid var(--rose);
 }
 
 
-/* =========================
-   8. Journey-Bereich
-   ========================= */
+/* =========================================
+   8. JOURNEY
+   ========================================= */
 
 #journey {
-    text-align: left;
+    border-top: 6px solid var(--sage);
 }
 
 
-/* =========================
-   9. Map-Bereich
-   ========================= */
+/* =========================================
+   9. MAP
+   ========================================= */
 
 #map {
-    text-align: center;
+    border-top: 6px solid var(--rose);
 }
 
 
-/* =========================
-   10. Footer
-   ========================= */
+/* =========================================
+   10. FUTURE PHOTO CARDS
+   ========================================= */
+
+/*
+   We are not using these yet,
+   but later these will be your clickable photos.
+*/
+
+.photo-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+
+.photo-card {
+    position: relative;
+
+    min-height: 300px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background-color: var(--sage-light);
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+
+.photo-card:hover {
+    transform: translateY(-6px);
+}
+
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   11. BUTTONS
+   ========================================= */
+
+button {
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 30px;
+
+    background-color: var(--rose);
+
+    color: var(--white);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+    background-color: var(--rose-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   12. LINKS INSIDE THE PAGE
+   ========================================= */
+
+main a {
+    color: var(--rose-dark);
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+main a:hover {
+    color: var(--sage-dark);
+}
+
+
+/* =========================================
+   13. FOOTER
+   ========================================= */
 
 footer {
-    margin-top: 100px;
-
     padding: 40px 20px;
 
     text-align: center;
 
-    font-size: 14px;
+    background-color: var(--sage-dark);
 
-    color: var(--text-light);
+    color: var(--white);
+
+    font-size: 14px;
 }
 
 
-/* =========================
-   11. Handy / kleinere Bildschirme
-   ========================= */
+/* =========================================
+   14. MOBILE VERSION
+   ========================================= */
 
 @media (max-width: 768px) {
 
     nav {
-        gap: 20px;
-        padding: 15px;
+        padding: 16px 5%;
     }
 
-    nav a {
-        font-size: 13px;
+
+    .nav-name {
+        font-size: 17px;
+    }
+
+
+    .nav-links {
+        gap: 14px;
+    }
+
+
+    .nav-links a {
+        font-size: 12px;
     }
 
 
     header {
-        min-height: 60vh;
+        min-height: 65vh;
+
+        padding: 60px 20px;
     }
+
+
+    .hello {
+        font-size: 14px;
+    }
+
 
     header h1 {
         font-size: 42px;
+
+        letter-spacing: -1px;
     }
 
-    header p {
-        font-size: 17px;
+
+    .intro {
+        font-size: 16px;
     }
 
 
     main {
         width: 92%;
+
+        padding-top: 60px;
     }
 
 
     section {
         padding: 35px 25px;
-        margin-bottom: 40px;
+
+        margin-bottom: 50px;
     }
 
 
     section h2 {
-        font-size: 26px;
+        font-size: 27px;
+    }
+
+
+    .photo-grid {
+        grid-template-columns: 1fr;
     }
 
 }
