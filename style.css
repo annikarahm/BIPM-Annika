@@ -1,3 +1,250 @@
+/* =========================
+   1. Grundfarben
+   ========================= */
+
+:root {
+    --background: #f7f7f5;
+    --surface: #ffffff;
+    --text: #1f2933;
+    --text-light: #667085;
+    --accent: #4f6f8f;
+    --accent-dark: #334e68;
+    --border: #e5e7eb;
+}
+
+
+/* =========================
+   2. Allgemeine Einstellungen
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    margin: 0;
+
     font-family: "Montserrat", sans-serif;
+
+    background-color: var(--background);
+    color: var(--text);
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   3. Navigation
+   ========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    padding: 20px;
+
+    background-color: rgba(255, 255, 255, 0.95);
+
+    border-bottom: 1px solid var(--border);
+
+    z-index: 100;
+}
+
+
+nav a {
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: color 0.3s ease;
+}
+
+
+nav a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================
+   4. Startbereich / Header
+   ========================= */
+
+header {
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+
+header h1 {
+    margin: 0;
+
+    font-size: 64px;
+    font-weight: 700;
+
+    letter-spacing: -2px;
+}
+
+
+header p {
+    margin-top: 20px;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    color: var(--text-light);
+}
+
+
+/* =========================
+   5. Hauptinhalt
+   ========================= */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   6. Einzelne Bereiche
+   ========================= */
+
+section {
+    margin-bottom: 80px;
+    padding: 60px;
+
+    background-color: var(--surface);
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+section h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    font-size: 32px;
+    font-weight: 600;
+
+    color: var(--accent-dark);
+}
+
+
+section p {
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+
+/* =========================
+   7. About-Me-Bereich
+   ========================= */
+
+#about {
+    text-align: left;
+}
+
+
+/* =========================
+   8. Journey-Bereich
+   ========================= */
+
+#journey {
+    text-align: left;
+}
+
+
+/* =========================
+   9. Map-Bereich
+   ========================= */
+
+#map {
+    text-align: center;
+}
+
+
+/* =========================
+   10. Footer
+   ========================= */
+
+footer {
+    margin-top: 100px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: var(--text-light);
+}
+
+
+/* =========================
+   11. Handy / kleinere Bildschirme
+   ========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        gap: 20px;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    header {
+        min-height: 60vh;
+    }
+
+    header h1 {
+        font-size: 42px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+
+    main {
+        width: 92%;
+    }
+
+
+    section {
+        padding: 35px 25px;
+        margin-bottom: 40px;
+    }
+
+
+    section h2 {
+        font-size: 26px;
+    }
+
 }
