@@ -3,6 +3,7 @@
    ========================================= */
 
 :root {
+
     --rose: #c3919e;
     --rose-dark: #a66f7d;
     --rose-light: #f0e1e5;
@@ -18,6 +19,7 @@
     --text-light: #6d746b;
 
     --border: #e9dfda;
+
 }
 
 
@@ -36,15 +38,23 @@ html {
 
 
 body {
+
     margin: 0;
 
-    font-family: "Montserrat", sans-serif;
+    font-family:
+        "Montserrat",
+        sans-serif;
 
-    background-color: var(--cream);
+    background-color:
+        var(--cream);
 
-    color: var(--text);
+    color:
+        var(--text);
 
     line-height: 1.6;
+
+    overflow-x: hidden;
+
 }
 
 
@@ -53,50 +63,67 @@ body {
    ========================================= */
 
 nav {
+
     position: sticky;
+
     top: 0;
 
     display: flex;
+
     align-items: center;
 
     width: 100%;
 
-    padding: 16px 5%;
+    padding:
+        16px 5%;
 
-    background-color: var(--rose);
+    background-color:
+        var(--rose);
 
     z-index: 1000;
+
 }
 
 
 .nav-links {
+
     display: flex;
+
     align-items: center;
 
     gap: 34px;
 
     margin-left: auto;
+
 }
 
 
 .nav-links a {
-    color: var(--white);
+
+    color:
+        var(--white);
 
     text-decoration: none;
 
     font-size: 14px;
+
     font-weight: 500;
 
     transition:
         color 0.3s ease,
         transform 0.3s ease;
+
 }
 
 
 .nav-links a:hover {
-    color: var(--sage-dark);
 
-    transform: translateY(-2px);
+    color:
+        var(--sage-dark);
+
+    transform:
+        translateY(-2px);
+
 }
 
 
@@ -105,21 +132,28 @@ nav {
    ========================================= */
 
 header {
+
     display: flex;
+
     flex-direction: column;
 
-    justify-content: center;
     align-items: center;
+
+    justify-content: center;
 
     text-align: center;
 
-    padding: 45px 20px 55px;
+    padding:
+        45px 20px 50px;
 
-    background-color: var(--rose-light);
+    background-color:
+        var(--rose-light);
+
 }
 
 
 header h1 {
+
     margin: 0;
 
     font-size: 46px;
@@ -128,170 +162,297 @@ header h1 {
 
     letter-spacing: -1px;
 
-    color: var(--text);
+    color:
+        var(--text);
+
 }
 
 
 .hello {
-    margin: 8px 0 0;
+
+    margin:
+        8px 0 0;
 
     font-size: 14px;
 
     font-weight: 500;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
-    color: var(--sage-dark);
+    color:
+        var(--sage-dark);
+
 }
 
 
 /* =========================================
-   HERO CAROUSEL
+   COVERFLOW
    ========================================= */
 
-.hero-carousel {
-    display: flex;
+.coverflow {
 
-    align-items: center;
-    justify-content: center;
+    position: relative;
 
-    gap: 22px;
+    width: 100%;
 
-    margin-top: 28px;
-}
+    max-width: 1000px;
 
+    height: 390px;
 
-/* Picture container */
-
-.hero-photo-wrapper {
-    width: 260px;
-    height: 320px;
-
-    border-radius: 18px;
+    margin-top: 25px;
 
     overflow: hidden;
 
-    border: 4px solid var(--white);
+    perspective: 1200px;
 
-    box-shadow:
-        0 10px 25px rgba(70, 60, 55, 0.12);
+    cursor: grab;
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    touch-action: pan-y;
+
+    user-select: none;
+
 }
 
 
-/* Picture */
+.coverflow:active {
 
-.hero-photo {
+    cursor: grabbing;
+
+}
+
+
+/* =========================================
+   ALL CARDS
+   ========================================= */
+
+.coverflow-card {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 260px;
+
+    height: 320px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border:
+        4px solid var(--white);
+
+    background-color:
+        var(--white);
+
+    box-shadow:
+        0 10px 25px
+        rgba(70, 60, 55, 0.10);
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.55);
+
+    transition:
+        transform 0.55s
+        cubic-bezier(0.22, 0.61, 0.36, 1),
+
+        opacity 0.55s ease,
+
+        filter 0.55s ease,
+
+        box-shadow 0.3s ease;
+
+    pointer-events: none;
+
+}
+
+
+.coverflow-card img {
+
     width: 100%;
+
     height: 100%;
 
     display: block;
 
     object-fit: cover;
 
-    transition:
-        opacity 0.2s ease,
-        transform 0.3s ease;
+    pointer-events: none;
+
+}
+
+
+/* =========================================
+   ACTIVE IMAGE
+   ========================================= */
+
+.coverflow-card.active {
+
+    z-index: 10;
+
+    opacity: 1;
+
+    filter: none;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(0)
+        translateZ(0)
+        scale(1);
+
 }
 
 
 /* Pop effect */
 
-.hero-photo-wrapper:hover {
+.coverflow-card.active:hover {
+
     transform:
+        translate(-50%, -50%)
         translateY(-6px)
         scale(1.03);
 
     box-shadow:
-        0 16px 35px rgba(70, 60, 55, 0.18);
+        0 18px 40px
+        rgba(70, 60, 55, 0.18);
+
 }
 
 
 /* =========================================
-   CAROUSEL ARROWS
+   FIRST IMAGE LEFT
    ========================================= */
 
-.carousel-arrow {
-    width: 42px;
-    height: 42px;
+.coverflow-card.prev {
 
-    display: flex;
+    z-index: 6;
 
-    justify-content: center;
-    align-items: center;
+    opacity: 0.72;
 
-    border: none;
+    pointer-events: auto;
 
-    border-radius: 50%;
+    filter:
+        brightness(0.90)
+        saturate(0.78);
 
-    background-color: var(--rose);
+    transform:
+        translate(-50%, -50%)
+        translateX(-235px)
+        translateZ(-180px)
+        scale(0.78);
 
-    color: var(--white);
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.25s ease,
-        background-color 0.25s ease;
-}
-
-
-.carousel-arrow:hover {
-    background-color: var(--rose-dark);
-
-    transform: scale(1.1);
 }
 
 
 /* =========================================
-   CAROUSEL DOTS
+   FIRST IMAGE RIGHT
    ========================================= */
 
-.carousel-dots {
-    display: flex;
+.coverflow-card.next {
 
-    justify-content: center;
+    z-index: 6;
 
-    gap: 8px;
+    opacity: 0.72;
 
-    margin-top: 17px;
+    pointer-events: auto;
+
+    filter:
+        brightness(0.90)
+        saturate(0.78);
+
+    transform:
+        translate(-50%, -50%)
+        translateX(235px)
+        translateZ(-180px)
+        scale(0.78);
+
 }
 
 
-.carousel-dot {
-    width: 8px;
-    height: 8px;
+/* =========================================
+   SECOND IMAGE LEFT
+   ========================================= */
 
-    border-radius: 50%;
+.coverflow-card.prev-far {
 
-    background-color: #d5c3c8;
+    z-index: 3;
 
-    cursor: pointer;
+    opacity: 0.35;
 
-    transition:
-        transform 0.25s ease,
-        background-color 0.25s ease;
+    pointer-events: auto;
+
+    filter:
+        brightness(0.83)
+        saturate(0.60);
+
+    transform:
+        translate(-50%, -50%)
+        translateX(-400px)
+        translateZ(-330px)
+        scale(0.61);
+
 }
 
 
-.carousel-dot:hover {
-    transform: scale(1.25);
+/* =========================================
+   SECOND IMAGE RIGHT
+   ========================================= */
+
+.coverflow-card.next-far {
+
+    z-index: 3;
+
+    opacity: 0.35;
+
+    pointer-events: auto;
+
+    filter:
+        brightness(0.83)
+        saturate(0.60);
+
+    transform:
+        translate(-50%, -50%)
+        translateX(400px)
+        translateZ(-330px)
+        scale(0.61);
+
 }
 
 
-.carousel-dot.active {
-    background-color: var(--rose-dark);
+/* =========================================
+   SWIPE HINT
+   ========================================= */
 
-    transform: scale(1.35);
+.swipe-hint {
+
+    margin:
+        2px 0 0;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        2px;
+
+    color:
+        var(--sage-dark);
+
+    opacity: 0.60;
+
 }
 
 
@@ -300,13 +461,17 @@ header h1 {
    ========================================= */
 
 main {
+
     width: 88%;
 
     max-width: 1100px;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
-    padding: 60px 0 80px;
+    padding:
+        60px 0 80px;
+
 }
 
 
@@ -315,22 +480,31 @@ main {
    ========================================= */
 
 section {
-    margin-bottom: 55px;
 
-    padding: 45px;
+    margin-bottom:
+        55px;
 
-    background-color: var(--white);
+    padding:
+        45px;
 
-    border: 1px solid var(--border);
+    background-color:
+        var(--white);
 
-    border-radius: 22px;
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
 
     box-shadow:
-        0 10px 30px rgba(70, 60, 55, 0.06);
+        0 10px 30px
+        rgba(70, 60, 55, 0.06);
+
 }
 
 
 section h2 {
+
     margin-top: 0;
 
     margin-bottom: 20px;
@@ -339,31 +513,45 @@ section h2 {
 
     font-weight: 600;
 
-    color: var(--sage-dark);
+    color:
+        var(--sage-dark);
+
 }
 
 
 section p {
-    color: var(--text-light);
+
+    color:
+        var(--text-light);
+
 }
 
 
 /* =========================================
-   SECTION COLORS
+   SECTION ACCENTS
    ========================================= */
 
 #about {
-    border-top: 5px solid var(--rose);
+
+    border-top:
+        5px solid var(--rose);
+
 }
 
 
 #journey {
-    border-top: 5px solid var(--sage);
+
+    border-top:
+        5px solid var(--sage);
+
 }
 
 
 #map {
-    border-top: 5px solid var(--rose);
+
+    border-top:
+        5px solid var(--rose);
+
 }
 
 
@@ -372,46 +560,65 @@ section p {
    ========================================= */
 
 .about-text {
-    max-width: 700px;
 
-    margin-bottom: 30px;
+    max-width:
+        700px;
 
-    font-size: 16px;
+    margin-bottom:
+        30px;
+
+    font-size:
+        16px;
+
 }
 
 
 .interests {
+
     display: flex;
 
     flex-wrap: wrap;
 
     gap: 12px;
+
 }
 
 
 .interests span {
-    padding: 10px 18px;
 
-    background-color: var(--sage-light);
+    padding:
+        10px 18px;
 
-    color: var(--sage-dark);
+    background-color:
+        var(--sage-light);
 
-    border-radius: 30px;
+    color:
+        var(--sage-dark);
 
-    font-size: 14px;
+    border-radius:
+        30px;
 
-    font-weight: 500;
+    font-size:
+        14px;
+
+    font-weight:
+        500;
 
     transition:
         transform 0.3s ease,
         background-color 0.3s ease;
+
 }
 
 
 .interests span:hover {
-    transform: translateY(-3px);
 
-    background-color: var(--rose-light);
+    transform:
+        translateY(-3px);
+
+    background-color:
+        var(--rose-light);
+
 }
 
 
@@ -420,150 +627,202 @@ section p {
    ========================================= */
 
 .timeline {
+
     position: relative;
 
-    max-width: 900px;
+    max-width:
+        900px;
 
-    margin: 45px auto 0;
+    margin:
+        45px auto 0;
+
 }
 
 
-/* Middle line */
-
 .timeline::after {
+
     content: "";
 
     position: absolute;
 
     width: 3px;
 
-    background-color: var(--sage);
-
     top: 0;
     bottom: 0;
 
     left: 50%;
 
-    transform: translateX(-50%);
+    background-color:
+        var(--sage);
+
+    transform:
+        translateX(-50%);
+
 }
 
 
 /* Timeline item */
 
 .timeline-item {
+
     position: relative;
 
     width: 50%;
 
-    padding: 10px 40px;
+    padding:
+        10px 40px;
 
-    margin-bottom: 30px;
+    margin-bottom:
+        30px;
+
 }
 
 
 .timeline-item.left {
+
     left: 0;
 
     text-align: right;
+
 }
 
 
 .timeline-item.right {
+
     left: 50%;
 
     text-align: left;
+
 }
 
 
-/* Dot */
+/* Timeline dots */
 
 .timeline-item::after {
+
     content: "";
 
     position: absolute;
 
     width: 17px;
+
     height: 17px;
 
     top: 28px;
 
-    background-color: var(--rose);
+    background-color:
+        var(--rose);
 
-    border: 4px solid var(--cream);
+    border:
+        4px solid var(--cream);
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     z-index: 2;
+
 }
 
 
 .timeline-item.left::after {
+
     right: -11px;
+
 }
 
 
 .timeline-item.right::after {
+
     left: -11px;
+
 }
 
 
-/* Cards */
+/* Timeline cards */
 
 .timeline-content {
-    padding: 22px 25px;
 
-    background-color: var(--cream);
+    padding:
+        22px 25px;
 
-    border-radius: 18px;
+    background-color:
+        var(--cream);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        18px;
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
+
 }
 
 
 .timeline-content:hover {
-    transform: translateY(-4px);
+
+    transform:
+        translateY(-4px);
 
     box-shadow:
-        0 10px 25px rgba(70, 60, 55, 0.10);
+        0 10px 25px
+        rgba(70, 60, 55, 0.10);
+
 }
 
 
 .timeline-year {
-    display: inline-block;
 
-    margin-bottom: 7px;
+    display:
+        inline-block;
 
-    color: var(--rose-dark);
+    margin-bottom:
+        7px;
 
-    font-size: 14px;
+    color:
+        var(--rose-dark);
 
-    font-weight: 700;
+    font-size:
+        14px;
 
-    letter-spacing: 1px;
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
 }
 
 
 .timeline-content h3 {
-    margin: 0 0 8px;
 
-    font-size: 18px;
+    margin:
+        0 0 8px;
 
-    font-weight: 600;
+    font-size:
+        18px;
 
-    color: var(--sage-dark);
+    font-weight:
+        600;
+
+    color:
+        var(--sage-dark);
+
 }
 
 
 .timeline-content p {
+
     margin: 0;
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    color: var(--text-light);
+    color:
+        var(--text-light);
+
 }
 
 
@@ -572,15 +831,21 @@ section p {
    ========================================= */
 
 footer {
-    padding: 30px 20px;
+
+    padding:
+        30px 20px;
 
     text-align: center;
 
-    background-color: var(--sage-dark);
+    background-color:
+        var(--sage-dark);
 
-    color: var(--white);
+    color:
+        var(--white);
 
-    font-size: 13px;
+    font-size:
+        13px;
+
 }
 
 
@@ -590,104 +855,200 @@ footer {
 
 @media (max-width: 768px) {
 
+
     nav {
-        padding: 14px 4%;
+
+        padding:
+            14px 4%;
+
     }
 
 
     .nav-links {
-        gap: 16px;
+
+        gap:
+            15px;
+
     }
 
 
     .nav-links a {
-        font-size: 12px;
+
+        font-size:
+            11px;
+
     }
 
 
     header {
-        padding: 38px 15px 45px;
+
+        padding:
+            38px 10px 45px;
+
     }
 
 
     header h1 {
-        font-size: 36px;
+
+        font-size:
+            36px;
+
     }
 
 
     .hello {
-        font-size: 12px;
 
-        letter-spacing: 3px;
+        font-size:
+            12px;
+
+        letter-spacing:
+            3px;
+
     }
 
 
-    .hero-carousel {
-        gap: 10px;
+    /* Coverflow */
+
+    .coverflow {
+
+        height:
+            315px;
+
+        margin-top:
+            20px;
+
     }
 
 
-    .hero-photo-wrapper {
-        width: 210px;
-        height: 260px;
+    .coverflow-card {
+
+        width:
+            200px;
+
+        height:
+            250px;
+
     }
 
 
-    .carousel-arrow {
-        width: 36px;
-        height: 36px;
+    .coverflow-card.prev {
 
-        font-size: 16px;
+        transform:
+            translate(-50%, -50%)
+            translateX(-145px)
+            translateZ(-180px)
+            scale(0.72);
+
+    }
+
+
+    .coverflow-card.next {
+
+        transform:
+            translate(-50%, -50%)
+            translateX(145px)
+            translateZ(-180px)
+            scale(0.72);
+
+    }
+
+
+    .coverflow-card.prev-far {
+
+        transform:
+            translate(-50%, -50%)
+            translateX(-240px)
+            translateZ(-300px)
+            scale(0.55);
+
+    }
+
+
+    .coverflow-card.next-far {
+
+        transform:
+            translate(-50%, -50%)
+            translateX(240px)
+            translateZ(-300px)
+            scale(0.55);
+
     }
 
 
     main {
-        width: 92%;
 
-        padding: 45px 0 60px;
+        width:
+            92%;
+
+        padding:
+            45px 0 60px;
+
     }
 
 
     section {
-        padding: 30px 24px;
 
-        margin-bottom: 40px;
+        padding:
+            30px 24px;
+
+        margin-bottom:
+            40px;
+
     }
 
 
     section h2 {
-        font-size: 25px;
+
+        font-size:
+            25px;
+
     }
 
 
-    /* Mobile Timeline */
+    /* Timeline mobile */
 
     .timeline::after {
-        left: 15px;
+
+        left:
+            15px;
+
     }
 
 
     .timeline-item {
-        width: 100%;
 
-        padding-left: 45px;
-        padding-right: 0;
+        width:
+            100%;
 
-        text-align: left;
+        padding-left:
+            45px;
+
+        padding-right:
+            0;
+
+        text-align:
+            left;
+
     }
 
 
     .timeline-item.left,
     .timeline-item.right {
+
         left: 0;
 
-        text-align: left;
+        text-align:
+            left;
+
     }
 
 
     .timeline-item.left::after,
     .timeline-item.right::after {
-        left: 4px;
+
+        left:
+            4px;
+
     }
 
 }
