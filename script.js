@@ -2,33 +2,15 @@
 // COVERFLOW CAROUSEL
 // =========================================
 
+const coverflow = document.getElementById("coverflow");
 
-// Find carousel
-
-const coverflow =
-    document.getElementById("coverflow");
-
-
-// Find all cards
-
-const cards =
-    Array.from(
-        document.querySelectorAll(
-            ".coverflow-card"
-        )
-    );
-
-
-// Current middle image
+const cards = Array.from(
+    document.querySelectorAll(".coverflow-card")
+);
 
 let currentIndex = 0;
 
-
-// Prevent one trackpad movement
-// from skipping many images
-
 let swipeLocked = false;
-
 
 
 // =========================================
@@ -37,69 +19,204 @@ let swipeLocked = false;
 
 function updateCarousel() {
 
-    const total =
-        cards.length;
+    const total = cards.length;
+
+    cards.forEach(function (card, index) {
+
+        // Alle Positionsklassen entfernen
+        card.className = "coverflow-card";
+
+        let difference = index - currentIndex;
 
 
-    cards.forEach(
-        function (card, index) {
+        // Endloses Carousel
+        if (difference > total / 2) {
+            difference = difference - total;
+        }
+
+        if (difference < -total / 2) {
+            difference = difference + total;
+        }
 
 
-            /*
-            Remove all position classes.
-            */
+        // Hauptbild
+        if (difference === 0) {
+            card.classList.add("active");
+        }
 
-            card.className =
-                "coverflow-card";
+        // Direkt links
+        else if (difference === -1) {
+            card.classList.add("prev");
+        }
+
+        // Direkt rechts
+        else if (difference === 1) {
+            card.classList.add("next");
+        }
+
+        // Zweites Bild links
+        else if (difference === -2) {
+            card.classList.add("prev-far");
+        }
+
+        // Zweites Bild rechts
+        else if (difference === 2) {
+            card.classList.add("next-far");
+        }
+
+    });
+}
 
 
-            /*
-            Calculate how far this card
-            is from the current card.
-            */
+// =========================================
+// NEXT PHOTO
+// =========================================
 
-            let difference =
-                index - currentIndex;
+function nextPhoto() {
+
+    currentIndex++;
+
+    if (currentIndex >= cards.length) {
+        currentIndex = 0;
+    }
+
+    updateCarousel();
+}
 
 
-            /*
-            These two conditions make
-            the carousel endless.
-            */
+// =========================================
+// PREVIOUS PHOTO
+// =========================================
 
-            if (
-                difference >
-                total / 2
-            ) {
+function previousPhoto() {
 
-                difference =
-                    difference - total;
+    currentIndex--;
 
+    if (currentIndex < 0) {
+        currentIndex = cards.length - 1;
+    }
+
+    updateCarousel();
+}
+
+
+// =========================================
+// TOUCHPAD
+// =========================================
+
+coverflow.addEventListener(
+    "wheel",
+    function (event) {
+
+        // Nur horizontales Wischen verwenden
+        if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+
+            event.preventDefault();
+
+            if (swipeLocked) {
+                return;
+            }
+
+            if (Math.abs(event.deltaX) < 8) {
+                return;
+            }
+
+            swipeLocked = true;
+
+
+            if (event.deltaX > 0) {
+                nextPhoto();
+            } else {
+                previousPhoto();
             }
 
 
-            if (
-                difference <
-                -total / 2
-            ) {
+            setTimeout(function () {
+                swipeLocked = false;
+            }, 450);
 
-                difference =
-                    difference + total;
+        }
 
-            }
+    },
+    {
+        passive: false
+    }
+);
 
 
+// =========================================
+// MOBILE / TOUCHSCREEN
+// =========================================
 
-            /*
-            Middle image
-            */
+let touchStartX = 0;
 
-            if (
-                difference === 0
-            ) {
 
-                card.classList.add(
-                    "active"
-                );
+coverflow.addEventListener(
+    "touchstart",
+    function (event) {
 
-            }
+        touchStartX =
+            event.touches[0].clientX;
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+coverflow.addEventListener(
+    "touchend",
+    function (event) {
+
+        const touchEndX =
+            event.changedTouches[0].clientX;
+
+        const difference =
+            touchStartX - touchEndX;
+
+
+        // Sehr kleine Bewegungen ignorieren
+        if (Math.abs(difference) < 40) {
+            return;
+        }
+
+
+        if (difference > 0) {
+            nextPhoto();
+        } else {
+            previousPhoto();
+        }
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+// =========================================
+// CLICK ON SIDE IMAGE
+// =========================================
+
+cards.forEach(function (card, index) {
+
+    card.addEventListener(
+        "click",
+        function () {
+
+            currentIndex = index;
+
+            updateCarousel();
+
+        }
+    );
+
+});
+
+
+// =========================================
+// INITIAL START
+// =========================================
+
+updateCarousel();
