@@ -7,7 +7,7 @@
 
     <title>Annika's Journey</title>
 
-    <!-- Montserrat Font -->
+    <!-- Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -20,15 +20,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-    <!-- =====================================
-         NAVIGATION
-         ===================================== -->
-
+    <!-- NAVIGATION -->
     <nav>
-
         <div class="nav-links">
 
             <a href="#about">About</a>
@@ -46,42 +41,70 @@
             </a>
 
         </div>
-
     </nav>
 
 
-    <!-- =====================================
-         INTRODUCTION
-         ===================================== -->
-
+    <!-- HERO -->
     <header>
 
-        <h1>
-            Hi, I'm Annika.
-        </h1>
+        <h1>Hi, I'm Annika.</h1>
 
         <p class="hello">
             Nice to meet you.
         </p>
 
-        <img
-            class="hero-photo"
-            src="images/Annika.jpeg"
-            alt="Photo of Annika"
-        >
+
+        <!-- PHOTO CAROUSEL -->
+        <div class="hero-carousel">
+
+            <button
+                class="carousel-arrow"
+                type="button"
+                onclick="previousPhoto()"
+                aria-label="Previous photo"
+            >
+                &#10094;
+            </button>
+
+
+            <div class="hero-photo-wrapper">
+
+                <img
+                    id="heroPhoto"
+                    class="hero-photo"
+                    src="images/Annika.jpeg"
+                    alt="Annika's journey"
+                >
+
+            </div>
+
+
+            <button
+                class="carousel-arrow"
+                type="button"
+                onclick="nextPhoto()"
+                aria-label="Next photo"
+            >
+                &#10095;
+            </button>
+
+        </div>
+
+
+        <!-- DOTS -->
+        <div
+            class="carousel-dots"
+            id="carouselDots"
+        ></div>
 
     </header>
 
 
-    <!-- =====================================
-         MAIN CONTENT
-         ===================================== -->
-
+    <!-- MAIN -->
     <main>
 
 
-        <!-- ABOUT ME -->
-
+        <!-- ABOUT -->
         <section id="about">
 
             <h2>About Me</h2>
@@ -91,13 +114,23 @@
                 staying active and discovering new things.
             </p>
 
+
             <div class="interests">
 
-                <span>Crafting</span>
+                <span>Knitting & Crocheting</span>
+
+                <span>Sewing</span>
+
+                <span>Pottery Painting</span>
+
                 <span>Gym & Dancing</span>
+
                 <span>Travelling</span>
+
                 <span>Fragrances</span>
+
                 <span>Cafés & Matcha</span>
+
                 <span>One Piece</span>
 
             </div>
@@ -105,18 +138,14 @@
         </section>
 
 
-        <!-- =====================================
-             ACADEMIC & PROFESSIONAL JOURNEY
-             ===================================== -->
-
+        <!-- JOURNEY -->
         <section id="journey">
 
             <h2>My Academic & Professional Journey</h2>
 
+
             <div class="timeline">
 
-
-                <!-- 2020 -->
 
                 <div class="timeline-item left">
 
@@ -126,9 +155,7 @@
                             2020
                         </span>
 
-                        <h3>
-                            Abitur
-                        </h3>
+                        <h3>Abitur</h3>
 
                         <p>
                             Neubrandenburg, Germany
@@ -139,8 +166,6 @@
                 </div>
 
 
-                <!-- 2020–2022 -->
-
                 <div class="timeline-item right">
 
                     <div class="timeline-content">
@@ -149,9 +174,7 @@
                             2020–2022
                         </span>
 
-                        <h3>
-                            Bilbao, Spain
-                        </h3>
+                        <h3>Bilbao, Spain</h3>
 
                         <p>
                             Learning Spanish, working and spending time
@@ -162,8 +185,6 @@
 
                 </div>
 
-
-                <!-- 2022–2026 -->
 
                 <div class="timeline-item left">
 
@@ -186,8 +207,6 @@
                 </div>
 
 
-                <!-- 2024 -->
-
                 <div class="timeline-item right">
 
                     <div class="timeline-content">
@@ -208,8 +227,6 @@
 
                 </div>
 
-
-                <!-- 2024–2025 -->
 
                 <div class="timeline-item left">
 
@@ -232,8 +249,6 @@
                 </div>
 
 
-                <!-- 2025 Prague -->
-
                 <div class="timeline-item right">
 
                     <div class="timeline-content">
@@ -254,8 +269,6 @@
 
                 </div>
 
-
-                <!-- 2025 KPMG -->
 
                 <div class="timeline-item left">
 
@@ -278,8 +291,6 @@
                 </div>
 
 
-                <!-- 2026 -->
-
                 <div class="timeline-item right">
 
                     <div class="timeline-content">
@@ -293,24 +304,20 @@
                         </h3>
 
                         <p>
-                            Starting the Master's program in Business
-                            Intelligence and Process Management.
+                            Starting the Master's program in Business Intelligence
+                            and Process Management.
                         </p>
 
                     </div>
 
                 </div>
 
-
             </div>
 
         </section>
 
 
-        <!-- =====================================
-             MAP
-             ===================================== -->
-
+        <!-- MAP -->
         <section id="map">
 
             <h2>My Journey Map</h2>
@@ -321,14 +328,10 @@
 
         </section>
 
-
     </main>
 
 
-    <!-- =====================================
-         FOOTER
-         ===================================== -->
-
+    <!-- FOOTER -->
     <footer>
 
         <p>
@@ -337,6 +340,9 @@
 
     </footer>
 
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
 </body>
 
