@@ -1,9 +1,8 @@
 /* =========================================
-   COLOR PALETTE
+   COLORS
    ========================================= */
 
 :root {
-
     --rose: #c3919e;
     --rose-dark: #a66f7d;
     --rose-light: #f0e1e5;
@@ -23,7 +22,7 @@
 
 
 /* =========================================
-   GENERAL SETTINGS
+   GENERAL
    ========================================= */
 
 * {
@@ -37,7 +36,6 @@ html {
 
 
 body {
-
     margin: 0;
 
     font-family: "Montserrat", sans-serif;
@@ -55,13 +53,10 @@ body {
    ========================================= */
 
 nav {
-
     position: sticky;
-
     top: 0;
 
     display: flex;
-
     align-items: center;
 
     width: 100%;
@@ -75,9 +70,7 @@ nav {
 
 
 .nav-links {
-
     display: flex;
-
     align-items: center;
 
     gap: 34px;
@@ -87,13 +80,11 @@ nav {
 
 
 .nav-links a {
-
     color: var(--white);
 
     text-decoration: none;
 
     font-size: 14px;
-
     font-weight: 500;
 
     transition:
@@ -103,7 +94,6 @@ nav {
 
 
 .nav-links a:hover {
-
     color: var(--sage-dark);
 
     transform: translateY(-2px);
@@ -111,31 +101,25 @@ nav {
 
 
 /* =========================================
-   HERO / INTRO
+   HERO
    ========================================= */
 
 header {
-
     display: flex;
-
     flex-direction: column;
 
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
 
-    padding: 48px 20px 55px;
+    padding: 45px 20px 55px;
 
     background-color: var(--rose-light);
 }
 
 
-/* Hi, I'm Annika */
-
 header h1 {
-
     margin: 0;
 
     font-size: 46px;
@@ -148,10 +132,7 @@ header h1 {
 }
 
 
-/* Nice to meet you */
-
 .hello {
-
     margin: 8px 0 0;
 
     font-size: 14px;
@@ -167,20 +148,30 @@ header h1 {
 
 
 /* =========================================
-   HERO PHOTO
+   HERO CAROUSEL
    ========================================= */
 
-.hero-photo {
+.hero-carousel {
+    display: flex;
 
-    width: 260px;
+    align-items: center;
+    justify-content: center;
 
-    height: 320px;
+    gap: 22px;
 
     margin-top: 28px;
+}
 
-    object-fit: cover;
+
+/* Picture container */
+
+.hero-photo-wrapper {
+    width: 260px;
+    height: 320px;
 
     border-radius: 18px;
+
+    overflow: hidden;
 
     border: 4px solid var(--white);
 
@@ -193,10 +184,25 @@ header h1 {
 }
 
 
-/* Photo pops up slightly */
+/* Picture */
 
-.hero-photo:hover {
+.hero-photo {
+    width: 100%;
+    height: 100%;
 
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.3s ease;
+}
+
+
+/* Pop effect */
+
+.hero-photo-wrapper:hover {
     transform:
         translateY(-6px)
         scale(1.03);
@@ -207,11 +213,93 @@ header h1 {
 
 
 /* =========================================
-   MAIN CONTENT
+   CAROUSEL ARROWS
+   ========================================= */
+
+.carousel-arrow {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: var(--rose);
+
+    color: var(--white);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+.carousel-arrow:hover {
+    background-color: var(--rose-dark);
+
+    transform: scale(1.1);
+}
+
+
+/* =========================================
+   CAROUSEL DOTS
+   ========================================= */
+
+.carousel-dots {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 17px;
+}
+
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background-color: #d5c3c8;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+.carousel-dot:hover {
+    transform: scale(1.25);
+}
+
+
+.carousel-dot.active {
+    background-color: var(--rose-dark);
+
+    transform: scale(1.35);
+}
+
+
+/* =========================================
+   MAIN
    ========================================= */
 
 main {
-
     width: 88%;
 
     max-width: 1100px;
@@ -223,11 +311,10 @@ main {
 
 
 /* =========================================
-   GENERAL SECTIONS
+   SECTIONS
    ========================================= */
 
 section {
-
     margin-bottom: 55px;
 
     padding: 45px;
@@ -244,7 +331,6 @@ section {
 
 
 section h2 {
-
     margin-top: 0;
 
     margin-bottom: 20px;
@@ -258,33 +344,26 @@ section h2 {
 
 
 section p {
-
     color: var(--text-light);
 }
 
 
 /* =========================================
-   SECTION ACCENTS
+   SECTION COLORS
    ========================================= */
 
 #about {
-
-    border-top:
-        5px solid var(--rose);
+    border-top: 5px solid var(--rose);
 }
 
 
 #journey {
-
-    border-top:
-        5px solid var(--sage);
+    border-top: 5px solid var(--sage);
 }
 
 
 #map {
-
-    border-top:
-        5px solid var(--rose);
+    border-top: 5px solid var(--rose);
 }
 
 
@@ -293,7 +372,6 @@ section p {
    ========================================= */
 
 .about-text {
-
     max-width: 700px;
 
     margin-bottom: 30px;
@@ -302,10 +380,7 @@ section p {
 }
 
 
-/* Interest labels */
-
 .interests {
-
     display: flex;
 
     flex-wrap: wrap;
@@ -315,7 +390,6 @@ section p {
 
 
 .interests span {
-
     padding: 10px 18px;
 
     background-color: var(--sage-light);
@@ -335,7 +409,6 @@ section p {
 
 
 .interests span:hover {
-
     transform: translateY(-3px);
 
     background-color: var(--rose-light);
@@ -347,7 +420,6 @@ section p {
    ========================================= */
 
 .timeline {
-
     position: relative;
 
     max-width: 900px;
@@ -356,10 +428,9 @@ section p {
 }
 
 
-/* Vertical green line */
+/* Middle line */
 
 .timeline::after {
-
     content: "";
 
     position: absolute;
@@ -369,7 +440,6 @@ section p {
     background-color: var(--sage);
 
     top: 0;
-
     bottom: 0;
 
     left: 50%;
@@ -378,10 +448,9 @@ section p {
 }
 
 
-/* Timeline entry */
+/* Timeline item */
 
 .timeline-item {
-
     position: relative;
 
     width: 50%;
@@ -392,36 +461,28 @@ section p {
 }
 
 
-/* Left */
-
 .timeline-item.left {
-
     left: 0;
 
     text-align: right;
 }
 
 
-/* Right */
-
 .timeline-item.right {
-
     left: 50%;
 
     text-align: left;
 }
 
 
-/* Timeline dots */
+/* Dot */
 
 .timeline-item::after {
-
     content: "";
 
     position: absolute;
 
     width: 17px;
-
     height: 17px;
 
     top: 28px;
@@ -437,21 +498,18 @@ section p {
 
 
 .timeline-item.left::after {
-
     right: -11px;
 }
 
 
 .timeline-item.right::after {
-
     left: -11px;
 }
 
 
-/* Timeline cards */
+/* Cards */
 
 .timeline-content {
-
     padding: 22px 25px;
 
     background-color: var(--cream);
@@ -467,7 +525,6 @@ section p {
 
 
 .timeline-content:hover {
-
     transform: translateY(-4px);
 
     box-shadow:
@@ -475,10 +532,7 @@ section p {
 }
 
 
-/* Year */
-
 .timeline-year {
-
     display: inline-block;
 
     margin-bottom: 7px;
@@ -493,10 +547,7 @@ section p {
 }
 
 
-/* Timeline title */
-
 .timeline-content h3 {
-
     margin: 0 0 8px;
 
     font-size: 18px;
@@ -507,10 +558,7 @@ section p {
 }
 
 
-/* Timeline text */
-
 .timeline-content p {
-
     margin: 0;
 
     font-size: 14px;
@@ -524,7 +572,6 @@ section p {
    ========================================= */
 
 footer {
-
     padding: 30px 20px;
 
     text-align: center;
@@ -538,62 +585,63 @@ footer {
 
 
 /* =========================================
-   MOBILE VERSION
+   MOBILE
    ========================================= */
 
 @media (max-width: 768px) {
 
-
     nav {
-
         padding: 14px 4%;
     }
 
 
     .nav-links {
-
         gap: 16px;
-
-        margin-left: auto;
     }
 
 
     .nav-links a {
-
         font-size: 12px;
     }
 
 
     header {
-
-        padding: 38px 20px 45px;
+        padding: 38px 15px 45px;
     }
 
 
     header h1 {
-
         font-size: 36px;
     }
 
 
     .hello {
-
         font-size: 12px;
 
         letter-spacing: 3px;
     }
 
 
-    .hero-photo {
+    .hero-carousel {
+        gap: 10px;
+    }
 
+
+    .hero-photo-wrapper {
         width: 210px;
-
         height: 260px;
     }
 
 
-    main {
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
 
+        font-size: 16px;
+    }
+
+
+    main {
         width: 92%;
 
         padding: 45px 0 60px;
@@ -601,7 +649,6 @@ footer {
 
 
     section {
-
         padding: 30px 24px;
 
         margin-bottom: 40px;
@@ -609,25 +656,21 @@ footer {
 
 
     section h2 {
-
         font-size: 25px;
     }
 
 
-    /* Timeline becomes one column */
+    /* Mobile Timeline */
 
     .timeline::after {
-
         left: 15px;
     }
 
 
     .timeline-item {
-
         width: 100%;
 
         padding-left: 45px;
-
         padding-right: 0;
 
         text-align: left;
@@ -636,7 +679,6 @@ footer {
 
     .timeline-item.left,
     .timeline-item.right {
-
         left: 0;
 
         text-align: left;
@@ -645,7 +687,6 @@ footer {
 
     .timeline-item.left::after,
     .timeline-item.right::after {
-
         left: 4px;
     }
 
