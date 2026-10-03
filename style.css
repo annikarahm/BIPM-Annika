@@ -46,7 +46,7 @@ body {
         sans-serif;
 
     background-color:
-        var(--cream);
+        var(--rose-light);
 
     color:
         var(--text);
@@ -838,7 +838,7 @@ footer {
     text-align: center;
 
     background-color:
-        var(--sage-dark);
+        var(--rose-light);
 
     color:
         var(--white);
