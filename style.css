@@ -3,6 +3,7 @@
    ========================================= */
 
 :root {
+
     --rose: #c3919e;
     --rose-dark: #a66f7d;
     --rose-light: #f0e1e5;
@@ -29,16 +30,20 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
+
     margin: 0;
 
     font-family: "Montserrat", sans-serif;
 
     background-color: var(--cream);
+
     color: var(--text);
 
     line-height: 1.6;
@@ -50,10 +55,13 @@ body {
    ========================================= */
 
 nav {
+
     position: sticky;
+
     top: 0;
 
     display: flex;
+
     align-items: center;
 
     width: 100%;
@@ -65,8 +73,11 @@ nav {
     z-index: 1000;
 }
 
+
 .nav-links {
+
     display: flex;
+
     align-items: center;
 
     gap: 34px;
@@ -74,12 +85,15 @@ nav {
     margin-left: auto;
 }
 
+
 .nav-links a {
+
     color: var(--white);
 
     text-decoration: none;
 
     font-size: 14px;
+
     font-weight: 500;
 
     transition:
@@ -87,7 +101,9 @@ nav {
         transform 0.3s ease;
 }
 
+
 .nav-links a:hover {
+
     color: var(--sage-dark);
 
     transform: translateY(-2px);
@@ -99,23 +115,31 @@ nav {
    ========================================= */
 
 header {
+
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
 
-    padding: 48px 20px;
+    padding: 48px 20px 55px;
 
     background-color: var(--rose-light);
 }
 
+
+/* Hi, I'm Annika */
+
 header h1 {
+
     margin: 0;
 
     font-size: 46px;
+
     font-weight: 700;
 
     letter-spacing: -1px;
@@ -123,10 +147,15 @@ header h1 {
     color: var(--text);
 }
 
+
+/* Nice to meet you */
+
 .hello {
-    margin: 10px 0 0;
+
+    margin: 8px 0 0;
 
     font-size: 14px;
+
     font-weight: 500;
 
     text-transform: uppercase;
@@ -138,11 +167,53 @@ header h1 {
 
 
 /* =========================================
+   HERO PHOTO
+   ========================================= */
+
+.hero-photo {
+
+    width: 260px;
+
+    height: 320px;
+
+    margin-top: 28px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    border: 4px solid var(--white);
+
+    box-shadow:
+        0 10px 25px rgba(70, 60, 55, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Photo pops up slightly */
+
+.hero-photo:hover {
+
+    transform:
+        translateY(-6px)
+        scale(1.03);
+
+    box-shadow:
+        0 16px 35px rgba(70, 60, 55, 0.18);
+}
+
+
+/* =========================================
    MAIN CONTENT
    ========================================= */
 
 main {
+
     width: 88%;
+
     max-width: 1100px;
 
     margin: 0 auto;
@@ -152,10 +223,11 @@ main {
 
 
 /* =========================================
-   SECTIONS
+   GENERAL SECTIONS
    ========================================= */
 
 section {
+
     margin-bottom: 55px;
 
     padding: 45px;
@@ -163,25 +235,29 @@ section {
     background-color: var(--white);
 
     border: 1px solid var(--border);
+
     border-radius: 22px;
 
-    box-shadow: 0 10px 30px rgba(70, 60, 55, 0.06);
+    box-shadow:
+        0 10px 30px rgba(70, 60, 55, 0.06);
 }
 
+
 section h2 {
+
     margin-top: 0;
+
     margin-bottom: 20px;
 
     font-size: 30px;
+
     font-weight: 600;
 
     color: var(--sage-dark);
 }
 
-section p {
-    margin-bottom: 0;
 
-    font-size: 16px;
+section p {
 
     color: var(--text-light);
 }
@@ -192,111 +268,254 @@ section p {
    ========================================= */
 
 #about {
-    border-top: 5px solid var(--rose);
+
+    border-top:
+        5px solid var(--rose);
 }
+
 
 #journey {
-    border-top: 5px solid var(--sage);
+
+    border-top:
+        5px solid var(--sage);
 }
 
+
 #map {
-    border-top: 5px solid var(--rose);
+
+    border-top:
+        5px solid var(--rose);
 }
 
 
 /* =========================================
-   FUTURE PHOTO GRID
+   ABOUT ME
    ========================================= */
 
-.photo-grid {
-    display: grid;
+.about-text {
 
-    grid-template-columns: repeat(3, 1fr);
+    max-width: 700px;
 
-    gap: 25px;
+    margin-bottom: 30px;
 
-    margin-top: 35px;
+    font-size: 16px;
 }
 
-.photo-card {
-    position: relative;
 
-    min-height: 300px;
+/* Interest labels */
+
+.interests {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.interests span {
+
+    padding: 10px 18px;
 
     background-color: var(--sage-light);
 
-    border-radius: 20px;
+    color: var(--sage-dark);
 
-    overflow: hidden;
+    border-radius: 30px;
 
-    cursor: pointer;
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+.interests span:hover {
+
+    transform: translateY(-3px);
+
+    background-color: var(--rose-light);
+}
+
+
+/* =========================================
+   TIMELINE
+   ========================================= */
+
+.timeline {
+
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 45px auto 0;
+}
+
+
+/* Vertical green line */
+
+.timeline::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+
+    background-color: var(--sage);
+
+    top: 0;
+
+    bottom: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* Timeline entry */
+
+.timeline-item {
+
+    position: relative;
+
+    width: 50%;
+
+    padding: 10px 40px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Left */
+
+.timeline-item.left {
+
+    left: 0;
+
+    text-align: right;
+}
+
+
+/* Right */
+
+.timeline-item.right {
+
+    left: 50%;
+
+    text-align: left;
+}
+
+
+/* Timeline dots */
+
+.timeline-item::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 17px;
+
+    height: 17px;
+
+    top: 28px;
+
+    background-color: var(--rose);
+
+    border: 4px solid var(--cream);
+
+    border-radius: 50%;
+
+    z-index: 2;
+}
+
+
+.timeline-item.left::after {
+
+    right: -11px;
+}
+
+
+.timeline-item.right::after {
+
+    left: -11px;
+}
+
+
+/* Timeline cards */
+
+.timeline-content {
+
+    padding: 22px 25px;
+
+    background-color: var(--cream);
+
+    border-radius: 18px;
+
+    border: 1px solid var(--border);
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-.photo-card:hover {
-    transform: translateY(-6px);
 
-    box-shadow: 0 12px 30px rgba(70, 60, 55, 0.12);
-}
+.timeline-content:hover {
 
-.photo-card img {
-    width: 100%;
-    height: 100%;
+    transform: translateY(-4px);
 
-    object-fit: cover;
+    box-shadow:
+        0 10px 25px rgba(70, 60, 55, 0.10);
 }
 
 
-/* =========================================
-   BUTTONS
-   ========================================= */
+/* Year */
 
-button {
-    padding: 12px 24px;
+.timeline-year {
 
-    border: none;
-    border-radius: 30px;
+    display: inline-block;
 
-    background-color: var(--rose);
+    margin-bottom: 7px;
 
-    color: var(--white);
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
-}
-
-button:hover {
-    background-color: var(--rose-dark);
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================================
-   LINKS INSIDE CONTENT
-   ========================================= */
-
-main a {
     color: var(--rose-dark);
 
-    font-weight: 600;
+    font-size: 14px;
 
-    text-decoration: none;
+    font-weight: 700;
+
+    letter-spacing: 1px;
 }
 
-main a:hover {
+
+/* Timeline title */
+
+.timeline-content h3 {
+
+    margin: 0 0 8px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
     color: var(--sage-dark);
+}
+
+
+/* Timeline text */
+
+.timeline-content p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    color: var(--text-light);
 }
 
 
@@ -305,7 +524,8 @@ main a:hover {
    ========================================= */
 
 footer {
-    padding: 35px 20px;
+
+    padding: 30px 20px;
 
     text-align: center;
 
@@ -313,7 +533,7 @@ footer {
 
     color: var(--white);
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
@@ -323,87 +543,110 @@ footer {
 
 @media (max-width: 768px) {
 
+
     nav {
+
         padding: 14px 4%;
     }
 
+
     .nav-links {
+
         gap: 16px;
 
         margin-left: auto;
     }
 
+
     .nav-links a {
+
         font-size: 12px;
     }
 
+
     header {
-        padding: 38px 20px;
+
+        padding: 38px 20px 45px;
     }
 
+
     header h1 {
+
         font-size: 36px;
     }
 
+
     .hello {
+
         font-size: 12px;
 
         letter-spacing: 3px;
     }
 
+
+    .hero-photo {
+
+        width: 210px;
+
+        height: 260px;
+    }
+
+
     main {
+
         width: 92%;
 
         padding: 45px 0 60px;
     }
 
+
     section {
+
         padding: 30px 24px;
 
         margin-bottom: 40px;
     }
 
+
     section h2 {
+
         font-size: 25px;
     }
 
-    .photo-grid {
-        grid-template-columns: 1fr;
+
+    /* Timeline becomes one column */
+
+    .timeline::after {
+
+        left: 15px;
     }
-}
-
-/* =========================================
-   HERO PHOTO
-   ========================================= */
-
-.hero-photo {
-    width: 260px;
-    height: 320px;
-
-    margin-top: 28px;
-
-    object-fit: cover;
-
-    /* leicht gerundete Ecken */
-    border-radius: 18px;
-
-    /* weißer Rahmen */
-    border: 4px solid var(--white);
-
-    /* leichter Schatten */
-    box-shadow: 0 10px 25px rgba(70, 60, 55, 0.12);
-
-    /* sorgt dafür, dass die Hover-Bewegung weich ist */
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
 
 
-/* Wenn man mit der Maus über das Bild geht */
+    .timeline-item {
 
-.hero-photo:hover {
-    transform: translateY(-6px) scale(1.03);
+        width: 100%;
 
-    box-shadow: 0 16px 35px rgba(70, 60, 55, 0.18);
+        padding-left: 45px;
+
+        padding-right: 0;
+
+        text-align: left;
+    }
+
+
+    .timeline-item.left,
+    .timeline-item.right {
+
+        left: 0;
+
+        text-align: left;
+    }
+
+
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+
+        left: 4px;
+    }
+
 }
