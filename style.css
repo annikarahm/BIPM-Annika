@@ -452,7 +452,6 @@ section p {
     background-color: var(--rose-light);
 }
 
-
 /* =========================================
    TIMELINE
    ========================================= */
@@ -460,9 +459,9 @@ section p {
 .timeline {
     position: relative;
 
-    max-width: 760px;
+    max-width: 650px;
 
-    margin: 30px auto 0;
+    margin: 25px auto 0;
 }
 
 
@@ -495,9 +494,9 @@ section p {
 
     width: 50%;
 
-    padding: 5px 14px;
+    padding: 0 10px;
 
-    margin-bottom: 6px;
+    margin-bottom: -40px;
 }
 
 
@@ -531,7 +530,7 @@ section p {
     width: 14px;
     height: 14px;
 
-    top: 22px;
+    top: 20px;
 
     background-color: var(--rose);
 
@@ -542,9 +541,11 @@ section p {
     z-index: 2;
 }
 
+
 .timeline-item.left::after {
     right: -9px;
 }
+
 
 .timeline-item.right::after {
     left: -9px;
@@ -557,9 +558,9 @@ section p {
 
 .timeline-content {
     width: 100%;
-    max-width: 275px;
+    max-width: 220px;
 
-    padding: 16px 18px;
+    padding: 14px 16px;
 
     background-color: var(--cream);
 
@@ -602,33 +603,35 @@ section p {
 .timeline-year {
     display: inline-block;
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
     color: var(--rose-dark);
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
 
     letter-spacing: 1px;
 }
 
-.timeline-content h3 {
-    margin: 0 0 5px;
 
-    font-size: 16px;
+.timeline-content h3 {
+    margin: 0 0 4px;
+
+    font-size: 14px;
     font-weight: 600;
 
-    color: var(--sage-dark);
+    line-height: 1.3;
 
-    line-height: 1.35;
+    color: var(--sage-dark);
 }
+
 
 .timeline-content p {
     margin: 0;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    line-height: 1.5;
+    line-height: 1.4;
 
     color: var(--text-light);
 }
