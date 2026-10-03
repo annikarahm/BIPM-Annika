@@ -3,13 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Annika's Journey</title>
 
-    <!-- Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Font: Montserrat -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
@@ -17,20 +29,35 @@
     >
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- =====================================
+         NAVIGATION
+         ===================================== -->
+
     <nav>
+
         <div class="nav-links">
 
-            <a href="#about">About</a>
+            <a href="#about">
+                About
+            </a>
 
-            <a href="#journey">My Journey</a>
+            <a href="#journey">
+                My Journey
+            </a>
 
-            <a href="#map">Map</a>
+            <a href="#map">
+                Map
+            </a>
 
             <a
                 href="https://www.linkedin.com/in/annika-rahm-2631a8222/"
@@ -41,111 +68,185 @@
             </a>
 
         </div>
+
     </nav>
 
 
-    <!-- HERO -->
+    <!-- =====================================
+         HERO
+         ===================================== -->
+
     <header>
 
-        <h1>Hi, I'm Annika.</h1>
+        <h1>
+            Hi, I'm Annika.
+        </h1>
 
         <p class="hello">
             Nice to meet you.
         </p>
 
 
-        <!-- PHOTO CAROUSEL -->
-        <div class="hero-carousel">
+        <!-- =================================
+             COVERFLOW CAROUSEL
+             ================================= -->
 
-            <button
-                class="carousel-arrow"
-                type="button"
-                onclick="previousPhoto()"
-                aria-label="Previous photo"
-            >
-                &#10094;
-            </button>
+        <div
+            class="coverflow"
+            id="coverflow"
+        >
 
-
-            <div class="hero-photo-wrapper">
-
+            <div class="coverflow-card">
                 <img
-                    id="heroPhoto"
-                    class="hero-photo"
                     src="images/Annika.jpeg"
-                    alt="Annika's journey"
+                    alt="Annika"
                 >
-
             </div>
 
 
-            <button
-                class="carousel-arrow"
-                type="button"
-                onclick="nextPhoto()"
-                aria-label="Next photo"
-            >
-                &#10095;
-            </button>
+            <div class="coverflow-card">
+                <img
+                    src="images/Bilbao.jpeg"
+                    alt="Bilbao"
+                >
+            </div>
+
+
+            <div class="coverflow-card">
+                <img
+                    src="images/Handball.jpeg"
+                    alt="Handball"
+                >
+            </div>
+
+
+            <div class="coverflow-card">
+                <img
+                    src="images/Roma.jpeg"
+                    alt="Rome"
+                >
+            </div>
+
+
+            <div class="coverflow-card">
+                <img
+                    src="images/SpainAlicante.jpeg"
+                    alt="Alicante"
+                >
+            </div>
+
+
+            <div class="coverflow-card">
+                <img
+                    src="images/Travel.jpeg"
+                    alt="Travelling"
+                >
+            </div>
+
+
+            <div class="coverflow-card">
+                <img
+                    src="images/matcha.jpeg"
+                    alt="Matcha"
+                >
+            </div>
+
+
+            <div class="coverflow-card">
+                <img
+                    src="images/prague.jpeg"
+                    alt="Prague"
+                >
+            </div>
 
         </div>
 
 
-        <!-- DOTS -->
-        <div
-            class="carousel-dots"
-            id="carouselDots"
-        ></div>
+        <p class="swipe-hint">
+            Swipe to explore
+        </p>
 
     </header>
 
 
-    <!-- MAIN -->
+    <!-- =====================================
+         MAIN CONTENT
+         ===================================== -->
+
     <main>
 
 
-        <!-- ABOUT -->
+        <!-- =================================
+             ABOUT ME
+             ================================= -->
+
         <section id="about">
 
-            <h2>About Me</h2>
+            <h2>
+                About Me
+            </h2>
 
             <p class="about-text">
-                Outside of university and work, I enjoy being creative,
-                staying active and discovering new things.
+                Outside of university and work,
+                I enjoy being creative, staying active
+                and discovering new things.
             </p>
 
 
             <div class="interests">
 
-                <span>Knitting & Crocheting</span>
+                <span>
+                    Knitting & Crocheting
+                </span>
 
-                <span>Sewing</span>
+                <span>
+                    Sewing
+                </span>
 
-                <span>Pottery Painting</span>
+                <span>
+                    Pottery Painting
+                </span>
 
-                <span>Gym & Dancing</span>
+                <span>
+                    Gym & Dancing
+                </span>
 
-                <span>Travelling</span>
+                <span>
+                    Travelling
+                </span>
 
-                <span>Fragrances</span>
+                <span>
+                    Fragrances
+                </span>
 
-                <span>Cafés & Matcha</span>
+                <span>
+                    Cafés & Matcha
+                </span>
 
-                <span>One Piece</span>
+                <span>
+                    One Piece
+                </span>
 
             </div>
 
         </section>
 
 
-        <!-- JOURNEY -->
+        <!-- =================================
+             ACADEMIC & PROFESSIONAL JOURNEY
+             ================================= -->
+
         <section id="journey">
 
-            <h2>My Academic & Professional Journey</h2>
+            <h2>
+                My Academic & Professional Journey
+            </h2>
 
 
             <div class="timeline">
 
+
+                <!-- 2020 -->
 
                 <div class="timeline-item left">
 
@@ -155,7 +256,9 @@
                             2020
                         </span>
 
-                        <h3>Abitur</h3>
+                        <h3>
+                            Abitur
+                        </h3>
 
                         <p>
                             Neubrandenburg, Germany
@@ -166,6 +269,8 @@
                 </div>
 
 
+                <!-- 2020–2022 -->
+
                 <div class="timeline-item right">
 
                     <div class="timeline-content">
@@ -174,17 +279,21 @@
                             2020–2022
                         </span>
 
-                        <h3>Bilbao, Spain</h3>
+                        <h3>
+                            Bilbao, Spain
+                        </h3>
 
                         <p>
-                            Learning Spanish, working and spending time
-                            as an au pair.
+                            Learning Spanish, working and spending
+                            time as an au pair.
                         </p>
 
                     </div>
 
                 </div>
 
+
+                <!-- 2022–2026 -->
 
                 <div class="timeline-item left">
 
@@ -207,6 +316,8 @@
                 </div>
 
 
+                <!-- 2024 PwC -->
+
                 <div class="timeline-item right">
 
                     <div class="timeline-content">
@@ -220,13 +331,16 @@
                         </h3>
 
                         <p>
-                            Professional experience during my Bachelor's studies.
+                            Professional experience during
+                            my Bachelor's studies.
                         </p>
 
                     </div>
 
                 </div>
 
+
+                <!-- 2024–2025 Alicante -->
 
                 <div class="timeline-item left">
 
@@ -249,6 +363,8 @@
                 </div>
 
 
+                <!-- 2025 Prague -->
+
                 <div class="timeline-item right">
 
                     <div class="timeline-content">
@@ -270,26 +386,31 @@
                 </div>
 
 
+                <!-- 2025–Now KPMG -->
+
                 <div class="timeline-item left">
 
                     <div class="timeline-content">
 
                         <span class="timeline-year">
-                            2025
+                            2025–Now
                         </span>
 
                         <h3>
-                            HR Projects at KPMG Law
+                            Working Student – HR Projects at KPMG Law
                         </h3>
 
                         <p>
-                            Working on projects in Human Resources.
+                            Supporting HR projects as a working student
+                            at KPMG Law.
                         </p>
 
                     </div>
 
                 </div>
 
+
+                <!-- 2026 Master -->
 
                 <div class="timeline-item right">
 
@@ -304,23 +425,30 @@
                         </h3>
 
                         <p>
-                            Starting the Master's program in Business Intelligence
-                            and Process Management.
+                            Starting the Master's program in
+                            Business Intelligence and Process Management
+                            at HWR Berlin.
                         </p>
 
                     </div>
 
                 </div>
 
+
             </div>
 
         </section>
 
 
-        <!-- MAP -->
+        <!-- =================================
+             MAP
+             ================================= -->
+
         <section id="map">
 
-            <h2>My Journey Map</h2>
+            <h2>
+                My Journey Map
+            </h2>
 
             <p>
                 My interactive journey map will be displayed here.
@@ -328,10 +456,14 @@
 
         </section>
 
+
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =====================================
+         FOOTER
+         ===================================== -->
+
     <footer>
 
         <p>
@@ -341,8 +473,12 @@
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =====================================
+         JAVASCRIPT
+         ===================================== -->
+
     <script src="script.js"></script>
+
 
 </body>
 
