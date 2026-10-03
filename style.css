@@ -29,13 +29,10 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
-
     background-color: var(--rose-light);
 }
-
 
 body {
     margin: 0;
@@ -43,7 +40,6 @@ body {
     font-family: "Montserrat", sans-serif;
 
     background-color: var(--rose-light);
-
     color: var(--text);
 
     line-height: 1.6;
@@ -58,7 +54,6 @@ body {
 
 nav {
     position: sticky;
-
     top: 0;
 
     display: flex;
@@ -73,17 +68,14 @@ nav {
     z-index: 1000;
 }
 
-
 .nav-links {
     display: flex;
-
     align-items: center;
 
     gap: 34px;
 
     margin-left: auto;
 }
-
 
 .nav-links a {
     color: var(--white);
@@ -98,7 +90,6 @@ nav {
         transform 0.3s ease;
 }
 
-
 .nav-links a:hover {
     color: var(--sage-dark);
 
@@ -112,7 +103,6 @@ nav {
 
 header {
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
@@ -125,7 +115,6 @@ header {
     background-color: var(--rose-light);
 }
 
-
 header h1 {
     margin: 0;
 
@@ -136,7 +125,6 @@ header h1 {
 
     color: var(--text);
 }
-
 
 .hello {
     margin: 8px 0 0;
@@ -176,7 +164,6 @@ header h1 {
 
     user-select: none;
 }
-
 
 .coverflow:active {
     cursor: grabbing;
@@ -222,7 +209,6 @@ header h1 {
     pointer-events: none;
 }
 
-
 .coverflow-card img {
     width: 100%;
     height: 100%;
@@ -255,9 +241,6 @@ header h1 {
         scale(1);
 }
 
-
-/* Pop-up effect */
-
 .coverflow-card.active:hover {
     transform:
         translate(-50%, -50%)
@@ -270,7 +253,7 @@ header h1 {
 
 
 /* =========================================
-   FIRST IMAGE LEFT
+   CAROUSEL LEFT / RIGHT
    ========================================= */
 
 .coverflow-card.prev {
@@ -291,11 +274,6 @@ header h1 {
         scale(0.78);
 }
 
-
-/* =========================================
-   FIRST IMAGE RIGHT
-   ========================================= */
-
 .coverflow-card.next {
     z-index: 6;
 
@@ -314,11 +292,6 @@ header h1 {
         scale(0.78);
 }
 
-
-/* =========================================
-   SECOND IMAGE LEFT
-   ========================================= */
-
 .coverflow-card.prev-far {
     z-index: 3;
 
@@ -336,11 +309,6 @@ header h1 {
         translateZ(-330px)
         scale(0.61);
 }
-
-
-/* =========================================
-   SECOND IMAGE RIGHT
-   ========================================= */
 
 .coverflow-card.next-far {
     z-index: 3;
@@ -362,12 +330,11 @@ header h1 {
 
 
 /* =========================================
-   MAIN CONTENT
+   MAIN
    ========================================= */
 
 main {
     width: 88%;
-
     max-width: 1100px;
 
     margin: 0 auto;
@@ -379,7 +346,7 @@ main {
 
 
 /* =========================================
-   WHITE CONTENT SECTIONS
+   SECTIONS
    ========================================= */
 
 section {
@@ -399,9 +366,6 @@ section {
     text-align: center;
 }
 
-
-/* Section titles */
-
 section h2 {
     margin-top: 0;
     margin-bottom: 20px;
@@ -413,7 +377,6 @@ section h2 {
 
     text-align: center;
 }
-
 
 section p {
     color: var(--text-light);
@@ -428,11 +391,9 @@ section p {
     border-top: 5px solid var(--rose);
 }
 
-
 #journey {
     border-top: 5px solid var(--sage);
 }
-
 
 #map {
     border-top: 5px solid var(--rose);
@@ -453,18 +414,12 @@ section p {
     text-align: center;
 }
 
-
-/* =========================================
-   INTEREST TAGS
-   ========================================= */
-
 .interests {
     display: flex;
 
     flex-wrap: wrap;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 12px;
@@ -473,7 +428,6 @@ section p {
 
     margin: 0 auto;
 }
-
 
 .interests span {
     padding: 10px 18px;
@@ -492,7 +446,6 @@ section p {
         background-color 0.3s ease;
 }
 
-
 .interests span:hover {
     transform: translateY(-3px);
 
@@ -507,13 +460,13 @@ section p {
 .timeline {
     position: relative;
 
-    max-width: 900px;
+    max-width: 760px;
 
-    margin: 45px auto 0;
+    margin: 30px auto 0;
 }
 
 
-/* Vertical line */
+/* Vertical middle line */
 
 .timeline::after {
     content: "";
@@ -542,11 +495,13 @@ section p {
 
     width: 50%;
 
-    padding: 10px 40px;
+    padding: 5px 14px;
 
-    margin-bottom: 30px;
+    margin-bottom: 6px;
 }
 
+
+/* Left side */
 
 .timeline-item.left {
     left: 0;
@@ -554,6 +509,8 @@ section p {
     text-align: right;
 }
 
+
+/* Right side */
 
 .timeline-item.right {
     left: 50%;
@@ -571,10 +528,10 @@ section p {
 
     position: absolute;
 
-    width: 17px;
-    height: 17px;
+    width: 14px;
+    height: 14px;
 
-    top: 28px;
+    top: 22px;
 
     background-color: var(--rose);
 
@@ -585,14 +542,12 @@ section p {
     z-index: 2;
 }
 
-
 .timeline-item.left::after {
-    right: -11px;
+    right: -9px;
 }
 
-
 .timeline-item.right::after {
-    left: -11px;
+    left: -9px;
 }
 
 
@@ -601,17 +556,34 @@ section p {
    ========================================= */
 
 .timeline-content {
-    padding: 22px 25px;
+    width: 100%;
+    max-width: 275px;
+
+    padding: 16px 18px;
 
     background-color: var(--cream);
 
     border: 1px solid var(--border);
 
-    border-radius: 18px;
+    border-radius: 16px;
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
+}
+
+
+/* Keep left cards close to centre */
+
+.timeline-item.left .timeline-content {
+    margin-left: auto;
+}
+
+
+/* Keep right cards close to centre */
+
+.timeline-item.right .timeline-content {
+    margin-right: auto;
 }
 
 
@@ -623,34 +595,40 @@ section p {
 }
 
 
+/* =========================================
+   TIMELINE TEXT
+   ========================================= */
+
 .timeline-year {
     display: inline-block;
 
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 
     color: var(--rose-dark);
 
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
 
     letter-spacing: 1px;
 }
 
-
 .timeline-content h3 {
-    margin: 0 0 8px;
+    margin: 0 0 5px;
 
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 
     color: var(--sage-dark);
-}
 
+    line-height: 1.35;
+}
 
 .timeline-content p {
     margin: 0;
 
-    font-size: 14px;
+    font-size: 13px;
+
+    line-height: 1.5;
 
     color: var(--text-light);
 }
@@ -663,7 +641,6 @@ section p {
 #map {
     text-align: center;
 }
-
 
 #map p {
     text-align: center;
@@ -693,18 +670,15 @@ footer {
 
 @media (max-width: 768px) {
 
-
     /* Navigation */
 
     nav {
         padding: 14px 4%;
     }
 
-
     .nav-links {
         gap: 15px;
     }
-
 
     .nav-links a {
         font-size: 11px;
@@ -717,11 +691,9 @@ footer {
         padding: 38px 10px 45px;
     }
 
-
     header h1 {
         font-size: 36px;
     }
-
 
     .hello {
         font-size: 12px;
@@ -738,12 +710,10 @@ footer {
         margin-top: 20px;
     }
 
-
     .coverflow-card {
         width: 200px;
         height: 250px;
     }
-
 
     .coverflow-card.prev {
         transform:
@@ -753,7 +723,6 @@ footer {
             scale(0.72);
     }
 
-
     .coverflow-card.next {
         transform:
             translate(-50%, -50%)
@@ -762,7 +731,6 @@ footer {
             scale(0.72);
     }
 
-
     .coverflow-card.prev-far {
         transform:
             translate(-50%, -50%)
@@ -770,7 +738,6 @@ footer {
             translateZ(-300px)
             scale(0.55);
     }
-
 
     .coverflow-card.next-far {
         transform:
@@ -800,7 +767,6 @@ footer {
         text-align: center;
     }
 
-
     section h2 {
         font-size: 25px;
     }
@@ -817,20 +783,27 @@ footer {
        TIMELINE MOBILE
        ===================================== */
 
+    .timeline {
+        max-width: 100%;
+
+        margin-top: 25px;
+    }
+
     .timeline::after {
         left: 15px;
     }
 
-
     .timeline-item {
         width: 100%;
 
-        padding-left: 45px;
-        padding-right: 0;
+        padding:
+            5px 0
+            5px 42px;
+
+        margin-bottom: 10px;
 
         text-align: left;
     }
-
 
     .timeline-item.left,
     .timeline-item.right {
@@ -839,10 +812,20 @@ footer {
         text-align: left;
     }
 
-
     .timeline-item.left::after,
     .timeline-item.right::after {
-        left: 4px;
+        left: 7px;
+    }
+
+    .timeline-content {
+        max-width: 100%;
+
+        margin: 0;
+    }
+
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+        margin: 0;
     }
 
 }
