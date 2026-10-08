@@ -6,6 +6,7 @@
     --rose: #c3919e;
     --rose-dark: #a66f7d;
     --rose-light: #f0e1e5;
+    --pastel-rose: #f7eff1;
 
     --sage: #9aaa91;
     --sage-dark: #66745f;
@@ -31,7 +32,7 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--cream);
+    background-color: var(--pastel-rose);
 }
 
 body {
@@ -39,7 +40,7 @@ body {
 
     font-family: "Montserrat", sans-serif;
 
-    background-color: var(--cream);
+    background-color: var(--pastel-rose);
     color: var(--text);
 
     line-height: 1.6;
@@ -112,7 +113,7 @@ header {
 
     padding: 45px 20px 50px;
 
-    background-color: var(--cream);
+    background-color: var(--pastel-rose);
 }
 
 header h1 {
