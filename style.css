@@ -98,7 +98,7 @@ nav {
 
 
 /* =========================================
-   HERO
+   HERO / HEADER
    ========================================= */
 
 header {
@@ -341,7 +341,7 @@ main {
 
     padding: 60px 0 80px;
 
-    background-color: transparent;
+    background-color: var(--cream);
 }
 
 
@@ -452,6 +452,7 @@ section p {
     background-color: var(--rose-light);
 }
 
+
 /* =========================================
    TIMELINE
    ========================================= */
@@ -462,7 +463,7 @@ section p {
     max-width: 650px;
 
     margin: 25px auto 0;
-   
+
     padding-bottom: 40px;
 }
 
@@ -543,11 +544,9 @@ section p {
     z-index: 2;
 }
 
-
 .timeline-item.left::after {
     right: -9px;
 }
-
 
 .timeline-item.right::after {
     left: -9px;
@@ -589,7 +588,6 @@ section p {
     margin-right: auto;
 }
 
-
 .timeline-content:hover {
     transform: translateY(-4px);
 
@@ -615,7 +613,6 @@ section p {
     letter-spacing: 1px;
 }
 
-
 .timeline-content h3 {
     margin: 0 0 4px;
 
@@ -626,7 +623,6 @@ section p {
 
     color: var(--sage-dark);
 }
-
 
 .timeline-content p {
     margin: 0;
@@ -650,13 +646,19 @@ section p {
 #map p {
     text-align: center;
 }
+
 .journey-map {
     width: 100%;
+
     height: 500px;
+
     border: none;
+
     border-radius: 18px;
+
     margin-top: 20px;
 }
+
 
 /* =========================================
    FOOTER
@@ -765,6 +767,8 @@ footer {
         width: 92%;
 
         padding: 45px 0 60px;
+
+        background-color: var(--cream);
     }
 
 
@@ -838,5 +842,4 @@ footer {
     .timeline-item.right .timeline-content {
         margin: 0;
     }
-
 }
