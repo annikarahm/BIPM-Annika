@@ -32,7 +32,7 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--pastel-rose);
+    background-color: var(--cream);
 }
 
 body {
@@ -40,7 +40,7 @@ body {
 
     font-family: "Montserrat", sans-serif;
 
-    background-color: var(--pastel-rose);
+    background-color: var(--cream);
     color: var(--text);
 
     line-height: 1.6;
@@ -113,7 +113,7 @@ header {
 
     padding: 45px 20px 50px;
 
-    background-color: var(--pastel-rose);
+    background-color: var(--cream);
 }
 
 header h1 {
